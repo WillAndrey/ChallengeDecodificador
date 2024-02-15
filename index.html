@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Challenge Decodificador</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="assets/AluraLogo.png" alt="logo da alura">
+        <input type="text" id="crip" placeholder="Digite seu texto">
+        <p id="hidden">Você digitou uma letra com acento, maiúscula ou algum caractere especial</p>
+    </header>
+
+    <aside id="area-decodificador">
+        <div id="bordaaside">
+                <img id="search"  src="assets/Search.png" alt="imagem de detetive com lupa">
+                <h3 class="not-found" id="oldh3">Nenhuma mensagem encontrada</h3>
+                <textarea maxlength="300" rows="10" cols="50" readonly>
+                Texto descriptografado
+                </textarea>
+            </div>
+    </aside>  
+
+    <main>
+             
+        <coluna>
+            <i class="fa fa-exclamation-circle">Apenas letras minúsculas e sem acento.</i>  
+        </coluna>    
+
+        <btns>
+            <button id="btn-crip" class="btn">Criptografar</button> 
+            <button id="btn-descrip" class="btn">Descriptografar</button>
+        </btns>
+           
+    </main>
+
+    
+
+<footer>
+    <p>Developer by: William Andrey</p>
+</footer>
+    <script src="assets/main.js"></script>
+</body>
+</html>
