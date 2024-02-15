@@ -12,7 +12,7 @@ const p = document.querySelector('#hidden')
 inputCriptografia.addEventListener('keypress', function(event) {
     const charCode = event.charCode
     const charTyped = String.fromCharCode(charCode)
-    const regex = /[a-z]+$/ // Expressão regular para verificar se o caractere é uma letra minúscula sem acento.
+    const regex = /^[a-z\s]*$/ // Expressão regular para verificar se o caractere é uma letra minúscula sem acento.
 
     if (!regex.test(charTyped)) {
         
