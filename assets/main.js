@@ -12,20 +12,16 @@ const p = document.querySelector('#hidden')
 inputCriptografia.addEventListener('keypress', function(event) {
     const charCode = event.charCode
     const charTyped = String.fromCharCode(charCode)
-    const regex = /[a-z]+$/ // Expressão regular para verificar se o caractere é uma letra minúscula sem acento.
+    const regex = /[a-z\s]/g // Expressão regular para verificar se o caractere é uma letra minúscula sem acento considerando espaços em branco.
 
     if (!regex.test(charTyped)) {
         
-        inputCriptografia.style.border = "1px solid red"
+       // inputCriptografia.style.border = "1px solid gray"
         inputCriptografia.style.borderRadius = "24px"
-        inputCriptografia.style.padding = "15px"
+        inputCriptografia.style.padding = "7px"
         
-        p.style.display = 'flex'
-        
-        // é melhor criar um elemento <p> no proprio html dar um hidden por padrão no display
-        // e só exibir quando está função for chamada.
-       
-
+        p.style.display = 'flex' //exibe o p de mensagem de erro
+ 
         event.preventDefault() // Impede a entrada do caractere se não for uma letra minúscula.
     }
 
