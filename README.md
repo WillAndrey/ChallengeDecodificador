@@ -6,7 +6,18 @@ Uma página web interativa que **criptografa e descriptografa palavras** digitad
 Projeto desenvolvido utilizando **HTML, CSS e JavaScript**.
 
 ---
+## 🔍 Detalhes técnicos
+A criptografia é personalizada por vogais digitadas pelo usuário. Após o clique no botão de criptografar, as vogais são substituídas por um conjunto de strings pré-definidas.
 
+- Vogal "a"  é substitúida por: 'ai'
+- Vogal "e"  é substitúida por: 'enter'
+- Vogal "i"  é substitúida por: 'imes'
+- Vogal "o"  é substitúida por: 'ober'
+- Vogal "u"  é substitúida por: 'ufat'
+
+⚠️ Consoantes permanecem no conjunto de palavras e não são afetadas pelo algoritmo.
+
+---
 ## ✨ Funcionalidades
 
 ✅ Entrada de texto no **textarea da esquerda**  
