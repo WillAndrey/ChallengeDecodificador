@@ -1,31 +1,20 @@
-// Elementos do DOM
-const inputCriptografia = document.querySelector('#crip')
-const buttonCriptografia = document.querySelector('#btn-crip')
-const buttonDescriptografia = document.querySelector('#btn-descrip')
-const textArea = document.querySelector('textarea')
-const oldh3 = document.querySelector('#oldh3')
+// Constantes e variáveis
+const btnCriptografia = document.querySelector('.btn1')
+const btnDescriptografia = document.querySelector('.btn2')
+const txtarea1 = document.querySelector('.txtarea1')
+const txtarea2 = document.querySelector('.txtarea2')
 let valorArrayFinal
 let valorOriginal
-const p = document.querySelector('#hidden')
 
 
-inputCriptografia.addEventListener('keypress', function(event) {
+
+btnCriptografia.addEventListener('keypress', function(event) {
     const charCode = event.charCode
     const charTyped = String.fromCharCode(charCode)
     const regex = /[a-z ]/g // Expressão regular para verificar se o caractere é uma letra minúscula sem acento.
 
     if (!regex.test(charTyped)) {
         
-        inputCriptografia.style.border = "1px solid red"
-        inputCriptografia.style.borderRadius = "24px"
-        inputCriptografia.style.padding = "15px"
-        
-        p.style.display = 'flex'
-        
-        // é melhor criar um elemento <p> no proprio html dar um hidden por padrão no display
-        // e só exibir quando está função for chamada.
-       
-
         event.preventDefault() // Impede a entrada do caractere se não for uma letra minúscula.
     }
 
@@ -35,10 +24,8 @@ inputCriptografia.addEventListener('keypress', function(event) {
 
 function criptografar() {
 
-    p.style.display = 'none'
-    inputCriptografia.style.border = 'none'
 
-    let valor = inputCriptografia.value
+    let valor = txtarea1.value
     valorOriginal = valor
     let valorArray = valor.split('')
     
@@ -69,9 +56,8 @@ function criptografar() {
         
     }//final do laço for
         valorArrayFinal = valorArray.join('')
-        console.log(valorArrayFinal)
-        oldh3.textContent = 'Aqui está seu texto criptografado!'
-        textArea.textContent = valorArrayFinal
+        txtarea1.value = valorArrayFinal
+       
     
 }
        
@@ -79,8 +65,7 @@ function criptografar() {
 
 function descriptografar() {
 
-    p.style.display  = 'none'
-    inputCriptografia.style.border = 'none'
+    
     let arrayDescrip = valorArrayFinal.split('')
     
    
@@ -101,12 +86,11 @@ function descriptografar() {
   
 
     let arrayDescriptografadoFinal = arrayDescrip.join('')
-    oldh3.textContent = 'Aqui está seu texto descriptografado!'
-    textArea.textContent = arrayDescriptografadoFinal
+    txtarea2.value = arrayDescriptografadoFinal
 
  }
 
 
 
-buttonCriptografia.addEventListener("click", criptografar)
-buttonDescriptografia.addEventListener("click", descriptografar)
+btnCriptografia.addEventListener("click", criptografar)
+btnDescriptografia.addEventListener("click", descriptografar)
